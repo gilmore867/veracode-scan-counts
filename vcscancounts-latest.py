@@ -1,15 +1,15 @@
 import sys
-import requests
+import requests #pip install requests
 import argparse
 import logging
 import json
 import datetime
-from lxml import etree
+from lxml import etree #pip install elementpath
 
 
 
-import anticrlf
-from veracode_api_py import VeracodeAPI as vapi
+import anticrlf #pip install logging-formatter-anticrlf
+from veracode_api_py import VeracodeAPI as vapi #pip install veracode_api_py
 
 log = logging.getLogger(__name__)
 
@@ -105,7 +105,7 @@ def get_incomplete_sandbox_scans(this_app_guid, this_app_id):
             name=(guiddata["profile"]["name"])
             scanstatus="INCOMPLETE"
             sandboxurl = profile+":"+"{}".format(sandboxid)
-            log.info("Status for sandbox scan {} in sandbox id {} for application {} was {}".format(incompletescancount, name, sandboxname, scanname, scanstatus, url+sandboxurl))
+            log.info("The status for sandbox scan {} in sandbox name {} for application {} was {} with url {}".format(scanname, sandboxname, name, scanstatus, url+sandboxurl))
             print ("{:<8} {:<25} {:<20} {:<20} {:<25} {:<10} ".format(incompletescancount, name, sandboxname, scanname, scanstatus, url+sandboxurl))
             sandboxscancount += 1
             incompletescancount +=1
