@@ -105,7 +105,7 @@ def get_incomplete_sandbox_scans(this_app_guid, this_app_id):
             name=(guiddata["profile"]["name"])
             scanstatus="INCOMPLETE"
             sandboxurl = profile+":"+"{}".format(sandboxid)
-            log.info("Status for sandbox scan {} in sandbox id {} for application {} was {}".format(incompletescancount, name, sandboxname, scanname, scanstatus, url+sandboxurl))
+            log.info("Status for sandbox scan {} in sandbox name {} for application {} was {}".format(incompletescancount, name, sandboxname, scanname, scanstatus, url+sandboxurl))
             print ("{:<8} {:<25} {:<20} {:<20} {:<25} {:<10} ".format(incompletescancount, name, sandboxname, scanname, scanstatus, url+sandboxurl))
             sandboxscancount += 1
             incompletescancount +=1
